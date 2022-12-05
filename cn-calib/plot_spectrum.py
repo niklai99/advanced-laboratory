@@ -32,6 +32,7 @@ def plot_energy_spectrum(
     ax.set_ylabel(ylabel)
     
     ax.set_xlim(x[energy_filter].min(), x[energy_filter].max())
+    ax.set_ylim(0, y[energy_filter].max()+(y[energy_filter].max()-y[energy_filter].min())*15/100)
     
     return ax
 
