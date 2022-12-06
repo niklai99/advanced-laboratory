@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def plot_energy_spectrum(
     x, y,
     fig, 
@@ -6,6 +9,7 @@ def plot_energy_spectrum(
     nrows         = 1, 
     ncols         = 1,
     bins          = 200,
+    yscale        = "linear",
     label         = "",
     ecolor        = "#06416D", 
     fcolor        = "#7eb0d5",
@@ -17,6 +21,10 @@ def plot_energy_spectrum(
     if ax is None:
         ax = fig.add_subplot(nrows, ncols, idx)
         
+        
+    if energy_filter is None:
+        energy_filter = np.ones(len(x), dtype=bool)
+        
     ax.hist(
         x[energy_filter],
         weights   = y[energy_filter],
@@ -26,6 +34,8 @@ def plot_energy_spectrum(
         facecolor = fcolor,
         label     = label
     )
+    
+    ax.set_yscale(yscale)
     
     ax.set_title(title)
     ax.set_xlabel(xlabel)
@@ -43,6 +53,7 @@ def plot_time_spectrum(
     nrows         = 1, 
     ncols         = 1,
     bins          = 200,
+    yscale        = "linear",
     label         = "",
     ecolor        = "#06416D", 
     fcolor        = "#7eb0d5",
@@ -63,6 +74,8 @@ def plot_time_spectrum(
         facecolor = fcolor,
         label     = label
     )
+    
+    ax.set_yscale(yscale)
     
     ax.set_title(title)
     ax.set_xlabel(xlabel)
