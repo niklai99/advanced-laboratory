@@ -3,7 +3,8 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/Users/niklai/miniforge3/envs/rootenv/include/**"
             ],
             "defines": [],
             "macFrameworkPath": [

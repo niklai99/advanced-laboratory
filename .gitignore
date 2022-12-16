@@ -4,3 +4,4 @@ doc/
 .ipynb_checkpoints
 .git/
 __pycache__/
+beam-analysis/main
